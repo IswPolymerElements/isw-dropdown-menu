@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+	<title>isw-dropdown-menu demo</title>
+
+	<script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+	<link rel="import" href="../../paper-checkbox/paper-checkbox.html">
+	<link rel="import" href="../../paper-item/paper-item.html">
+	<link rel="import" href="../../paper-item/paper-icon-item.html">
+	<link rel="import" href="../../paper-item/paper-item-body.html">
+	<link rel="import" href="../../paper-styles/demo-pages.html">
+
+	<link rel="import" href="../isw-dropdown-menu.html">
+</head>
+<body>
+<dom-module id="demo-element">
+	<template>
+		<h3>Basic isw-dropdown-menu</h3>
+		<isw-dropdown-menu attr-for-selected="value" label="Dinosaurs">
+			<template is="dom-repeat" items="[[ items ]]">
+				<paper-item value$="[[ item.id ]]">[[ item.label ]]</paper-item>
+			</template>
+		</isw-dropdown-menu>
+
+		<br><br>
+
+		<h3>Multi select</h3>
+		<isw-dropdown-menu multi attr-for-selected="value" label="Dinosaurs">
+			<template is="dom-repeat" items="[[ items ]]">
+				<paper-item value$="[[ item.id ]]">[[ item.label ]]</paper-item>
+			</template>
+		</isw-dropdown-menu>
+
+		<br><br>
+
+		<h3>Fancy:</h3>
+		<isw-dropdown-menu multi attr-for-selected="value" label="Dinosaurs">
+			<template is="dom-repeat" items="[[ items ]]">
+				<paper-icon-item
+						value$="[[ item.id ]]"
+						label$="[[ item.label ]]"
+						toggles
+						active="{{ item.selected }}">
+					<paper-checkbox slot="item-icon" checked="[[ item.selected ]]"></paper-checkbox>
+					<paper-item-body two-line>
+						<div>[[ item.label ]]</div>
+						<div secondary>[[ item.description ]]</div>
+					</paper-item-body>
+				</paper-icon-item>
+			</template>
+		</isw-dropdown-menu>
+	</template>
+
+	<script>
+		HTMLImports.whenReady( function() {
+			Polymer( {
+				is: 'demo-element',
+				ready: function() {
+					this.items = [
+						{
+							id: 1,
+							label: 'Allosaurus',
+							description: 'Allosaurus was a large bipedal predator.'
+						},
+						{
+							id: 2,
+							label: 'Brontosaurus',
+							description: 'Brontosaurus was a large, long-necked quadrupedal animal.'
+						},
+						{
+							id: 3,
+							label: 'Carcharodontosaurus',
+							description: 'Carcharodontosaurus were carnivores, with enormous jaws.'
+						},
+						{
+							id: 4,
+							label: 'Diplodocus',
+							description: 'Diplodocus is among the most easily identifiable dinosaurs.'
+						}
+					];
+				}
+			} );
+		} );
+	</script>
+</dom-module>
+
+<demo-element></demo-element>
+
+
+
+
+<!--<div class="vertical-section-container centered">
+
+	<demo-snippet>
+		<template>
+		</template>
+	</demo-snippet>
+
+	<h3>Multi selection</h3>
+	<demo-snippet>
+		<template>
+			<isw-dropdown-menu attr-for-selected="value" multi label="Tests">
+				<paper-item value="1">allosaurus</paper-item>
+				<paper-item value="2">brontosaurus</paper-item>
+				<paper-item value="3">carcharodontosaurus</paper-item>
+				<paper-item value="4">diplodocus</paper-item>
+			</isw-dropdown-menu>
+		</template>
+	</demo-snippet>
+</div>-->
+</body>
+</html>
