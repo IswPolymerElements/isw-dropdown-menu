@@ -4,6 +4,9 @@
 <link rel="import" href="../paper-input/paper-input.html">
 <link rel="import" href="../paper-styles/shadow.html">
 
+<link rel="import" href="../iron-icon/iron-icon.html">
+<link rel="import" href="../iron-icons/iron-icons.html">
+
 <link rel="import" href="../iron-dropdown/iron-dropdown.html">
 
 <!--
@@ -32,6 +35,10 @@ Implemented as an simple combination of paper-input, paper-listbox and iron-drop
 				display: block;
 			}
 
+			paper-input iron-icon {
+				color: var(--secondary-text-color);
+			}
+
 			paper-listbox {
 				@apply --shadow-elevation-2dp;
 				position: relative;
@@ -47,7 +54,9 @@ Implemented as an simple combination of paper-input, paper-listbox and iron-drop
 				no-label-float="[[ noLabelFloat ]]"
 				placeholder="[[ placeholder ]]"
 				value="[[ value ]]"
-				on-tap="open"></paper-input>
+				on-tap="open">
+			<iron-icon icon="arrow-drop-down" slot="suffix"></iron-icon>
+		</paper-input>
 
 		<iron-dropdown
 				id="dropdown"
