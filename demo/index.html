@@ -8,17 +8,30 @@
 
 	<script src="../../webcomponentsjs/webcomponents-lite.js"></script>
 
-	<link rel="import" href="../../paper-checkbox/paper-checkbox.html">
 	<link rel="import" href="../../paper-item/paper-item.html">
 	<link rel="import" href="../../paper-item/paper-icon-item.html">
 	<link rel="import" href="../../paper-item/paper-item-body.html">
 	<link rel="import" href="../../paper-styles/demo-pages.html">
+
+
+	<link rel="import" href="../../iron-icon/iron-icon.html">
+	<link rel="import" href="../../iron-icons/iron-icons.html">
 
 	<link rel="import" href="../isw-dropdown-menu.html">
 </head>
 <body>
 <dom-module id="demo-element">
 	<template>
+		<style>
+			iron-icon.checkbox.checked { color: var(--accent-color); }
+			iron-icon.checkbox.unchecked { color: var(--secondary-text-color); }
+
+			paper-icon-item iron-icon.checkbox.checked { display: none; }
+			paper-icon-item iron-icon.checkbox.unchecked { display: block; }
+			paper-icon-item.iron-selected iron-icon.checkbox.checked { display: block; }
+			paper-icon-item.iron-selected iron-icon.checkbox.unchecked { display: none; }
+		</style>
+
 		<h3>Basic:</h3>
 		<isw-dropdown-menu attr-for-selected="value" label="Dinosaurs">
 			<template is="dom-repeat" items="[[ items ]]">
@@ -40,12 +53,25 @@
 		<h3>Fancy:</h3>
 		<isw-dropdown-menu multi attr-for-selected="value" label="Dinosaurs">
 			<template is="dom-repeat" items="[[ items ]]">
-				<paper-icon-item
-						value$="[[ item.id ]]"
-						label$="[[ item.label ]]"
-						toggles
-						active="{{ item.selected }}">
-					<paper-checkbox slot="item-icon" checked="[[ item.selected ]]"></paper-checkbox>
+				<paper-icon-item value$="[[ item.id ]]" label$="[[ item.label ]]">
+					<iron-icon class="checkbox unchecked" icon="check-box-outline-blank" slot="item-icon"></iron-icon>
+					<iron-icon class="checkbox checked" icon="check-box" slot="item-icon"></iron-icon>
+					<paper-item-body two-line>
+						<div>[[ item.label ]]</div>
+						<div secondary>[[ item.description ]]</div>
+					</paper-item-body>
+				</paper-icon-item>
+			</template>
+		</isw-dropdown-menu>
+
+		<br><br>
+
+		<h3>Preselected:</h3>
+		<isw-dropdown-menu multi attr-for-selected="value" label="Dinosaurs" selected-values="{{ preselected }}">
+			<template is="dom-repeat" items="[[ items ]]">
+				<paper-icon-item value$="[[ item.id ]]" label$="[[ item.label ]]">
+					<iron-icon class="checkbox unchecked" icon="check-box-outline-blank" slot="item-icon"></iron-icon>
+					<iron-icon class="checkbox checked" icon="check-box" slot="item-icon"></iron-icon>
 					<paper-item-body two-line>
 						<div>[[ item.label ]]</div>
 						<div secondary>[[ item.description ]]</div>
@@ -82,6 +108,7 @@
 							description: 'Diplodocus is among the most easily identifiable dinosaurs.'
 						}
 					];
+					this.preselected = [ '1', '3' ];
 				}
 			} );
 		} );
