@@ -19,7 +19,7 @@
 <body>
 <dom-module id="demo-element">
 	<template>
-		<h3>Basic isw-dropdown-menu</h3>
+		<h3>Basic:</h3>
 		<isw-dropdown-menu attr-for-selected="value" label="Dinosaurs">
 			<template is="dom-repeat" items="[[ items ]]">
 				<paper-item value$="[[ item.id ]]">[[ item.label ]]</paper-item>
@@ -28,7 +28,7 @@
 
 		<br><br>
 
-		<h3>Multi select</h3>
+		<h3>Multi select:</h3>
 		<isw-dropdown-menu multi attr-for-selected="value" label="Dinosaurs">
 			<template is="dom-repeat" items="[[ items ]]">
 				<paper-item value$="[[ item.id ]]">[[ item.label ]]</paper-item>
