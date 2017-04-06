@@ -15,4 +15,6 @@ Implemented as an simple combination of paper-input, paper-listbox and iron-drop
 </isw-dropdown-menu>
 ```
 
-https://www.webcomponents.org/element/rene-lindner-isw/isw-dropdown-menu/demo/demo/index.html
+It looks like webcomponents.org cannot parse a 2.0 element yet. See docs inside the source.
+
+Demos: https://www.webcomponents.org/element/rene-lindner-isw/isw-dropdown-menu/demo/demo/index.html
