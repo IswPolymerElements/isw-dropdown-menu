@@ -1,7 +1,10 @@
 {
   "name": "isw-dropdown-menu",
-  "description": "Multi selection dropdown menu",
+  "description": "Material Design Polymer 2.0 Dropdown Menu (with multi-select).",
   "main": "isw-dropdown-menu.html",
+  "authors": [
+    "ISW Industriesoftware GmbH"
+  ],
   "dependencies": {
     "polymer": "Polymer/polymer#^2.0.0-rc.2",
     "paper-listbox": "PolymerElements/paper-listbox#2.0-preview",
