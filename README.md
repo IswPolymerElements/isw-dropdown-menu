@@ -6,6 +6,8 @@ Simple dropdown menu like paper-dropdown-menu, but drops "any kind of content" s
 
 Implemented as an simple combination of paper-input, paper-listbox and iron-dropdown.
 
+Demo Link: https://www.webcomponents.org/element/rene-lindner-isw/isw-dropdown-menu/demo/demo/index.html
+
 ```html
 <isw-dropdown-menu multi label="Dinosaurs">
   <paper-item>Allosaurus</paper-item>
@@ -14,7 +16,3 @@ Implemented as an simple combination of paper-input, paper-listbox and iron-drop
   <paper-item>Diplodocus</paper-item>
 </isw-dropdown-menu>
 ```
-
-It looks like webcomponents.org cannot parse a 2.0 element yet. See docs inside the source.
-
-Demos: https://www.webcomponents.org/element/rene-lindner-isw/isw-dropdown-menu/demo/demo/index.html
