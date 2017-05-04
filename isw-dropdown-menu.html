@@ -53,7 +53,9 @@ Implemented as an simple combination of paper-input, paper-listbox and iron-drop
 				no-label-float="[[ noLabelFloat ]]"
 				placeholder="[[ placeholder ]]"
 				value="[[ value ]]"
-				on-tap="open">
+				on-focused-changed="_onFocusChanged"
+				on-tap="open"
+				readonly>
 			<iron-icon icon="arrow-drop-down" slot="suffix"></iron-icon>
 		</paper-input>
 
@@ -226,6 +228,13 @@ Implemented as an simple combination of paper-input, paper-listbox and iron-drop
 			 */
 			close() {
 				this.$.dropdown.close();
+			}
+
+
+			_onFocusChanged( event ) {
+				if( event.detail.value ) {
+					this.open();
+				}
 			}
 
 
