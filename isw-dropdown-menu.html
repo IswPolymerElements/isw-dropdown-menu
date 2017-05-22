@@ -119,7 +119,8 @@ Implemented as an simple combination of paper-input, paper-listbox and iron-drop
 					 */
 					value: {
 						type: String,
-						computed: '_computeInputValue(selectedItems)'
+						computed: '_computeInputValue(selectedItems)',
+						notify: true
 					},
 
 
@@ -139,25 +140,29 @@ Implemented as an simple combination of paper-input, paper-listbox and iron-drop
 					 * See paper-listbox documentation.
 					 */
 					selected: {
-						type: String
+						type: String,
+						notify: true
 					},
 					/**
 					 * See paper-listbox documentation.
 					 */
 					selectedItem: {
-						type: Object
+						type: Object,
+						notify: true
 					},
 					/**
 					 * See paper-listbox documentation.
 					 */
 					selectedItems: {
-						type: Array
+						type: Array,
+						notify: true
 					},
 					/**
 					 * See paper-listbox documentation.
 					 */
 					selectedValues: {
-						type: Array
+						type: Array,
+						notify: true
 					},
 
 
