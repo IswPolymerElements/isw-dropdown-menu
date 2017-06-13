@@ -102,6 +102,22 @@
 					</paper-icon-item>
 				</template>
 			</isw-dropdown-menu>
+
+			<br><br>
+
+			<h3>Readonly:</h3>
+			<isw-dropdown-menu multi readonly attr-for-selected="value" label="Dinosaurs" selected-values="{{ readonlyselected }}">
+				<template is="dom-repeat" items="[[ items ]]">
+					<paper-icon-item value$="[[ item.id ]]" label$="[[ item.label ]]">
+						<iron-icon class="checkbox unchecked" icon="check-box-outline-blank" slot="item-icon"></iron-icon>
+						<iron-icon class="checkbox checked" icon="check-box" slot="item-icon"></iron-icon>
+						<paper-item-body two-line>
+							<div>[[ item.label ]]</div>
+							<div secondary>[[ item.description ]]</div>
+						</paper-item-body>
+					</paper-icon-item>
+				</template>
+			</isw-dropdown-menu>
 		</template>
 
 		<script>
@@ -132,6 +148,7 @@
 							}
 						];
 						this.preselected = [ '1', '3' ];
+						this.readonlyselected = [ '2' ];
 					}
 				} );
 			} );

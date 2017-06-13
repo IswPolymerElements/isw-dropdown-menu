@@ -38,6 +38,10 @@ Implemented as an simple combination of paper-input, paper-listbox and iron-drop
 				color: var(--secondary-text-color);
 			}
 
+			:host([readonly]) paper-input iron-icon {
+				color: var(--disabled-text-color);
+			}
+
 			paper-listbox {
 				@apply --shadow-elevation-2dp;
 				position: relative;
@@ -121,6 +125,13 @@ Implemented as an simple combination of paper-input, paper-listbox and iron-drop
 						type: String,
 						computed: '_computeInputValue(selectedItems)',
 						notify: true
+					},
+					/**
+					 * No overlay.
+					 */
+					readonly: {
+						type: Boolean,
+						value: false
 					},
 
 
@@ -226,7 +237,9 @@ Implemented as an simple combination of paper-input, paper-listbox and iron-drop
 			 * See iron-dropdown documentation.
 			 */
 			open() {
-				this.$.dropdown.open();
+				if( !this.readonly ) {
+					this.$.dropdown.open();
+				}
 			}
 			/**
 			 * See iron-dropdown documentation.
