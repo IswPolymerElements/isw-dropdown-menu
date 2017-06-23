@@ -6,8 +6,6 @@ Simple dropdown menu like paper-dropdown-menu, but drops "any kind of content" s
 
 Implemented as an simple combination of paper-input, paper-listbox and iron-dropdown.
 
-Demo Link: https://www.webcomponents.org/element/IswPolymerElements/isw-dropdown-menu/demo/demo/index.html
-
 ```html
 <isw-dropdown-menu multi label="Dinosaurs">
   <paper-item>Allosaurus</paper-item>
