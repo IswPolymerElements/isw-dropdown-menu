@@ -59,6 +59,8 @@ Implemented as an simple combination of paper-input, paper-listbox and iron-drop
 				value="[[ value ]]"
 				on-tap="open"
 				on-click="open"
+				invalid="[[ invalid ]]"
+				error-message="[[ errorMessage ]]"
 				readonly>
 			<iron-icon icon="arrow-drop-down" slot="suffix"></iron-icon>
 		</paper-input>
@@ -132,6 +134,22 @@ Implemented as an simple combination of paper-input, paper-listbox and iron-drop
 					readonly: {
 						type: Boolean,
 						value: false
+					},
+					/**
+					 * Display invalid.
+					 */
+					invalid: {
+						type: Boolean,
+						notify: true,
+						value: false
+					},
+					/**
+					 * Display error message.
+					 */
+					errorMessage: {
+						type: String,
+						notify: true,
+						value: ''
 					},
 
 
