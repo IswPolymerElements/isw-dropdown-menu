@@ -61,6 +61,7 @@ Implemented as an simple combination of paper-input, paper-listbox and iron-drop
 				on-click="open"
 				invalid="[[ invalid ]]"
 				error-message="[[ errorMessage ]]"
+				no-label-float="[[noLabelFloat]]"
 				readonly>
 			<iron-icon icon="arrow-drop-down" slot="suffix"></iron-icon>
 		</paper-input>
@@ -150,6 +151,10 @@ Implemented as an simple combination of paper-input, paper-listbox and iron-drop
 						type: String,
 						notify: true,
 						value: ''
+					},
+					noLabelFloat: {
+						type: Boolean,
+						value: false
 					},
 
 
