@@ -81,7 +81,8 @@ Implemented as an simple combination of paper-input, paper-listbox and iron-drop
 					selected="{{ selected }}"
 					selected-item="{{ selectedItem }}"
 					selected-items="{{ selectedItems }}"
-					selected-values="{{ selectedValues }}">
+					selected-values="{{ selectedValues }}"
+					on-iron-activate="_onIronActivate">
 
 				<slot></slot>
 
@@ -225,6 +226,13 @@ Implemented as an simple combination of paper-input, paper-listbox and iron-drop
 					 */
 					verticalOffset: {
 						type: Number
+					},
+					/**
+					 * Set to true to enable automatically closing the dropdown after an item has been activated, even if the selection did not change..
+					 */
+					closeOnActivate: {
+						type: Boolean,
+						value: false
 					}
 				};
 			}
@@ -269,6 +277,13 @@ Implemented as an simple combination of paper-input, paper-listbox and iron-drop
 			 */
 			close() {
 				this.$.dropdown.close();
+			}
+
+
+			_onIronActivate( event ) {
+				if( this.closeOnActivate ) {
+					this.close();
+				}
 			}
 
 
